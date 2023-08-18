@@ -51,7 +51,8 @@ DROP TABLE professores;
 CREATE TABLE cursos(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(30) NOT NULL,
-    carga_horaria TINYINT NOT NULL
+    carga_horaria TINYINT NOT NULL,
+    professor_id TINYINT  NULL
 );
 
 
@@ -69,7 +70,8 @@ CREATE TABLE professores(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
    	area_atuacao ENUM('design', 'desenvolvimento', 'infra') NOT NULL, 
-    carga_horaria TINYINT NOT NULL
+    carga_horaria TINYINT NOT NULL,
+    curso_id TINYINT NOT NULL
 );
 
 ALTER TABLE cursos
