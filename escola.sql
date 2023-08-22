@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/08/2023 às 15:21
+-- Tempo de geração: 22/08/2023 às 14:36
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -45,14 +45,12 @@ CREATE TABLE `alunos` (
 INSERT INTO `alunos` (`id`, `nome`, `data_nascimento`, `primeira_nota`, `segunda_nota`, `curso_id`) VALUES
 (1, 'Aicha Mubobo', '2000-05-15', 10.00, 10.00, 5),
 (2, 'Adriana Manuel', '1995-12-14', 9.00, 8.00, 4),
-(3, 'Ndombele João', '2001-04-17', 7.00, 8.00, 3),
 (4, 'Anacleta Kiesse', '1985-04-14', 10.00, 10.00, 4),
 (5, 'João Paulo', '2000-01-08', 10.00, 10.00, 2),
 (6, 'Graciano Mangurra', '2000-03-13', 10.00, 10.00, 4),
 (7, 'Ariel Ngurra', '2000-09-29', 10.00, 10.00, 1),
 (8, 'Paulo Afonso', '1998-06-19', 4.00, 6.00, 1),
-(9, 'Carlos Diogo', '1991-08-12', 3.00, 8.00, 2),
-(10, 'Mateus Afonso', '1999-02-14', 5.00, 7.00, 5);
+(9, 'Carlos Diogo', '1991-08-12', 3.00, 8.00, 2);
 
 -- --------------------------------------------------------
 
@@ -75,7 +73,7 @@ INSERT INTO `cursos` (`id`, `titulo`, `carga_horaria`, `professor_id`) VALUES
 (1, 'Front_End', 40, 10),
 (2, 'Back_End', 80, 9),
 (3, 'UX/UI Design', 30, 8),
-(4, 'Figma', 10, 7),
+(4, 'Adobe XD', 15, 7),
 (5, 'Redes de Computadores', 100, 6);
 
 -- --------------------------------------------------------
