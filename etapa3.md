@@ -10,7 +10,7 @@ WHERE YEAR(data_nascimento) < 2009;
 ## 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
 
 ```sql
-SELECT id, ROUND(AVG((primeira_nota + segunda_nota) / 2), 2) As 'Média dos Alunos'
+SELECT nome, ROUND(AVG((primeira_nota + segunda_nota) / 2), 2) As 'Média dos Alunos'
 FROM alunos
 GROUP BY id;
 ```
@@ -125,3 +125,43 @@ ON alunos.curso_id = cursos.id
 GROUP BY Alunos;
 ```
 ![Alt text](image12.png)
+
+# DESAFIOS
+
+1) Criar uma consulta que calcule a idade do aluno
+
+```sql
+SELECT nome, data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) as ano FROM alunos LIMIT 0, 25;
+```
+![Alt text](image13.png)
+
+
+2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **maior ou igual a 7**.
+
+```sql
+SELECT nome AS Alunos, ROUND(AVG((primeira_nota + segunda_nota) / 2), 2) AS MediaDosAlunos
+FROM alunos
+GROUP BY id
+HAVING MediaDosAlunos >= 7;
+```
+![Alt text](img/image14.png)
+
+3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **menor que 7**.
+
+```sql
+SELECT nome AS Alunos, ROUND(AVG((primeira_nota + segunda_nota) / 2), 2) AS MediaDosAlunos
+FROM alunos
+GROUP BY id
+HAVING MediaDosAlunos < 7;
+```
+![Alt text](image15.png)
+
+
+4) Criar uma consulta que mostre a quantidade de alunos com média **maior ou igual a 7**.
+
+```sql
+SELECT COUNT(*) AS 'QTD de Alunos'
+FROM alunos
+HAVING AVG((primeira_nota + segunda_nota) / 2) >= 7;
+```
+![Alt text](image16.png)
