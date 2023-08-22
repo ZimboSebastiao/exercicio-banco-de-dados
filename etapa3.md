@@ -96,7 +96,7 @@ ON alunos.curso_id = cursos.id
 WHERE cursos.titulo LIKE '%Front_End%' OR cursos.titulo LIKE '%Back_End%'
 GROUP BY alunos.nome;
 ```
-![Alt text](image9.png)
+![Alt text](img/image9.png)
 
 ## 11) Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
 
@@ -124,7 +124,7 @@ FROM alunos INNER JOIN cursos
 ON alunos.curso_id = cursos.id
 GROUP BY Alunos;
 ```
-![Alt text](image12.png)
+![Alt text](img/image12.png)
 
 # DESAFIOS
 
@@ -133,7 +133,7 @@ GROUP BY Alunos;
 ```sql
 SELECT nome, data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) as ano FROM alunos LIMIT 0, 25;
 ```
-![Alt text](image13.png)
+![Alt text](img/image13.png)
 
 
 2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **maior ou igual a 7**.
@@ -154,7 +154,7 @@ FROM alunos
 GROUP BY id
 HAVING MediaDosAlunos < 7;
 ```
-![Alt text](image15.png)
+![Alt text](img/image15.png)
 
 
 4) Criar uma consulta que mostre a quantidade de alunos com média **maior ou igual a 7**.
@@ -164,4 +164,4 @@ SELECT COUNT(*) AS 'QTD de Alunos'
 FROM alunos
 HAVING AVG((primeira_nota + segunda_nota) / 2) >= 7;
 ```
-![Alt text](image16.png)
+![Alt text](img/image16.png)
